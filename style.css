@@ -1,0 +1,225 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+
+html, body, div, section, article, header, footer, nav, aside, a {
+    margin:                     0;
+    padding:                    0;
+}
+
+body{
+    font-family:                'Arial', sans-serif;
+    background-image:           url(http://subtlepatterns.com/patterns/frenchstucco.png);
+}
+
+/*==========================================
+    header styles
+==========================================*/
+
+#main-header {
+    width:                      360px;
+    position:                   absolute;
+    left:                       50%;
+    bottom:                     50px;
+    margin-left:                -543px;
+}
+
+#header-navigation:hover li {
+    opacity:                    0.6;
+}
+#header-navigation:hover li a {
+    text-shadow:                0px 0px 5px #000000;
+}
+
+#header-navigation:hover li:hover {
+    opacity:                    1;
+}
+#header-navigation li.trans {
+    opacity:                    0.5;
+}
+#header-navigation li {
+    font-size:                  35px;
+    display:                    block;
+    -webkit-transition:         all 500ms linear;
+}
+
+#header-navigation li a {
+    font-family:                'Josefin Slab', serif;
+    font-weight:                700;
+    color:                      transparent;
+    display:                    block;
+    text-shadow:                0px 0px 2px #000000;
+    padding:                    5px 20px;
+    margin:                     2px;
+}
+
+#header-navigation li a:hover {
+    color:                      #545454;
+    -webkit-transition:         all 500ms linear;
+    text-shadow:                0px 0px 1px #000000;
+}
+
+#header-navigation li a.selected {
+    color:                      #000;
+}
+
+
+/*==========================================
+    content styles
+==========================================*/
+
+
+#content {
+    width:                      960px;
+    margin:                     auto;
+}
+
+.content-inner {
+    position:                   relative;
+    top:                        50%;
+    left:                       230px;
+    background-image:           url(http://subtlepatterns.com/patterns/low_contrast_linen.png);
+    width:                      730px;
+    overflow:                   hidden;
+}
+
+.content-inner:hover {
+    overflow:                   auto;
+}
+
+#content p {
+    padding:                    30px;
+}
+
+.content {
+    height:                     0;
+    box-sizing:                 border-box;
+    padding:                    0 20px;
+    overflow:                   hidden;
+    -webkit-transition:         all 500ms;
+    color:                      #fff;
+}
+
+.content.selected {
+    height:                     600px;
+    padding:                    20px;
+    margin-top:                 40px;
+}
+
+
+
+/*==========================================
+    footer styles
+==========================================*/
+
+
+
+#main-footer    {
+    background-color:           rgba(97,97,97,0.5);
+    position:                   fixed;
+    bottom:                     0;
+    left:                       0;
+    text-align:                 center;
+    width:                      100%;
+    color:                      #fff;
+}
+
+#footer-navigation li {
+    display:                    inline-block;
+}
+
+#footer-navigation a {
+    color:                      #fff;
+    font-weight:                bold;
+    -webkit-transition:         all 500ms;
+}
+
+#footer-navigation a:hover {
+    color:                      #808080;
+}
+
+#footer-navigation li:after {
+    content:                    '';
+    border-right:               1px dashed;
+    padding-right:              5px;
+}
+
+#footer-navigation li:last-child:after {
+    display:                    none;
+}
+
+/*==========================================
+    generic styles
+==========================================*/
+
+ul.no-list {
+    list-style:                 none;
+}
+
+.no-text-deco li a {
+    text-decoration:            none;
+}
+
+
+
+/*==========================================
+    toggler styles
+==========================================*/
+
+
+
+div.toggler .content-toggler {
+-webkit-transition:             all 500ms;
+overflow:                       hidden;
+opacity:                        1;
+height:                         auto;
+color:                          #fff;
+}
+
+a.show-hide {
+  color:                        #545454;
+  text-decoration:              none;
+  display:                      block;
+  text-align:                   center;
+  border-style:                 dashed;
+  border-color:                 #545454;
+  border-width:                 0 0 1px 0;
+}
+
+div.toggler.hide .content-toggler {
+height:                         0;
+}
+
+
+
+/*==========================================
+    grid styles
+==========================================*/
+
+
+
+
+#grid {
+ pointer-events:                none;
+ opacity:                       0;
+ height:                        100%;
+ position:                      absolute;
+ float:                         left;
+ top:                           0;
+ left:                          0;
+ z-index:                       999999;
+ width:                         100%;
+}
+
+#grid .wrapper {
+  width:                        960px;
+  margin:                       auto;
+  height:                       100%;
+  outline:                      2000px solid #aaeeff;
+ }
+
+#grid .grid-stripe {
+  width:                        60px;
+  margin:                       0 10px;
+  float:                        left;
+  height:                       100%;
+  background:                   rgba(50,200,150,0.5);
+ }
