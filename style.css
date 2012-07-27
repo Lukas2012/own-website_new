@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Antic);
 
 html, body, div, section, article, header, footer, nav, aside, a {
     margin:                     0;
@@ -6,7 +7,7 @@ html, body, div, section, article, header, footer, nav, aside, a {
 }
 
 body{
-    font-family:                'Arial', sans-serif;
+    font-family:                'Antic', sans-serif;
     background-image:           url(http://subtlepatterns.com/patterns/frenchstucco.png);
 }
 
@@ -15,11 +16,20 @@ body{
 ==========================================*/
 
 #main-header {
-    width:                      360px;
-    position:                   absolute;
-    left:                       50%;
-    bottom:                     50px;
-    margin-left:                -543px;
+    width:                      100%;
+    z-index:                    999;
+    position:                   fixed;
+    top:                        0;
+    left:                       0;
+    background-color:           rgba(255,255,255,0.7);
+    border-bottom:              1px dotted #808080;
+}
+
+#header-navigation {
+    padding:                    0;
+    width:                      960px;
+    margin:                     10px auto;
+
 }
 
 #header-navigation:hover li {
@@ -36,19 +46,24 @@ body{
     opacity:                    0.5;
 }
 #header-navigation li {
-    font-size:                  35px;
-    display:                    block;
+    font-size:                  20px;
+    display:                    inline-block;
     -webkit-transition:         all 500ms linear;
+    padding:                    0 ;
+
+}
+#header-navigation li:last-child a {
+    border: 0
 }
 
 #header-navigation li a {
-    font-family:                'Josefin Slab', serif;
-    font-weight:                700;
+    font-family:                'Antic', sans-serif;
     color:                      transparent;
     display:                    block;
     text-shadow:                0px 0px 2px #000000;
-    padding:                    5px 20px;
-    margin:                     2px;
+    padding:                    0 10px;
+    text-align: center;
+    border-right:               1px dotted #000;
 }
 
 #header-navigation li a:hover {
@@ -66,27 +81,28 @@ body{
     content styles
 ==========================================*/
 
-
+#page_impressum {
+    font-size: 12px;
+}
+#page_impressum a{
+    color: #aaa;
+}
 #content {
     width:                      960px;
-    margin:                     auto;
+    margin:                     110px auto 0;
 }
 
 .content-inner {
     position:                   relative;
-    top:                        50%;
-    left:                       230px;
+    margin:                     auto;
     background-image:           url(http://subtlepatterns.com/patterns/low_contrast_linen.png);
-    width:                      730px;
+    width:                      780px;
     overflow:                   hidden;
 }
 
-.content-inner:hover {
-    overflow:                   auto;
-}
-
-#content p {
-    padding:                    30px;
+#content .fix-height {
+    box-sizing:                 border-box;
+    padding-bottom:             40px;
 }
 
 .content {
@@ -94,16 +110,30 @@ body{
     box-sizing:                 border-box;
     padding:                    0 20px;
     overflow:                   hidden;
-    -webkit-transition:         all 500ms;
-    color:                      #fff;
+    color:                      #C0C0C0;
+    -webkit-transition:         all 1000ms;
+    -webkit-transform:          perspective(700px) 
+                                translate3d(0,0,-5000px);
+    -webkit-backface-visibility:hidden;
 }
 
 .content.selected {
-    height:                     600px;
     padding:                    20px;
-    margin-top:                 40px;
+    -webkit-transform:          perspective(700px)
+                                translate3d(0,0,0);
 }
 
+#profile-img img {
+    height:                     200px;
+    width:                      auto;
+}
+
+#profile-img {
+    float:                      left;
+    background-color:           rgba(192,192,192,0.5);
+    padding:                    10px;
+    margin-right:               20px;
+}
 
 
 /*==========================================
@@ -120,6 +150,14 @@ body{
     text-align:                 center;
     width:                      100%;
     color:                      #fff;
+    font-size:                  12px;
+    height:                     20px;
+}
+
+
+#footer-navigation {
+    padding:                    0;
+    margin:                     2px 0 0 0;
 }
 
 #footer-navigation li {
@@ -128,7 +166,6 @@ body{
 
 #footer-navigation a {
     color:                      #fff;
-    font-weight:                bold;
     -webkit-transition:         all 500ms;
 }
 
@@ -149,6 +186,16 @@ body{
 /*==========================================
     generic styles
 ==========================================*/
+.fiddle-button {
+    text-align:                 right;
+
+}
+
+h1{
+    border-bottom:              1px dashed #545454;
+    text-transform:             uppercase;
+    text-align:                 center;
+}
 
 ul.no-list {
     list-style:                 none;
@@ -172,16 +219,17 @@ overflow:                       hidden;
 opacity:                        1;
 height:                         auto;
 color:                          #fff;
+background-image:               url(http://subtlepatterns.com/patterns/frenchstucco.png);
+width: 100%;
+padding: 0 50px;
+margin-left: -50px;
 }
 
 a.show-hide {
-  color:                        #545454;
-  text-decoration:              none;
-  display:                      block;
-  text-align:                   center;
-  border-style:                 dashed;
-  border-color:                 #545454;
-  border-width:                 0 0 1px 0;
+color:                        #545454;
+text-decoration:              none;
+display:                      block;
+text-align:                   center;
 }
 
 div.toggler.hide .content-toggler {
